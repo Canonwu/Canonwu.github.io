@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>html5 canvas首屏自适应背景动画循环效果代码</title>
+		<!--IE-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!--视宽-->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5/dist/css/bootstrap.min.css">
+
+		<!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+		<!--WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<!--[endif]-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/loading.css" />
+		<link rel="stylesheet" type="text/css" href="js/animateMaster/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/skill.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/web.css" />
+		<link rel="stylesheet" type="text/css" href="css/ps.css" />
+		<link rel="stylesheet" type="text/css" href="css/staff.css" />
+		<link rel="stylesheet" type="text/css" href="css/message.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
+		<!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+
+		<!--必要样式-->
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+		<!--[if IE]>
+<script src="js/desktop/html5.js"></script>
+<![endif]-->
+	</head>
+
+	<body>
+
+		<div id="loading" class="container">
+			<div id="load">
+				<div id="loadIco1"></div>
+				<div id="loadIco2"></div>
+				<div id="loadtext">0%</div>
+			</div>
+			<div id="loadShadow"></div>
+		</div>
+
+		<section id="main" class="pageBg1 pageBg2 container">
+			<nav id="nav">
+				<ul>
+					<li><a href="javascript:;" data-hash="index">我的首页</a></li>
+					<li><a href="javascript:;" data-hash="skill">技能展示</a></li>
+					<li><a href="javascript:;" data-hash="web">网页设计/开发</a></li>
+					<li><a href="javascript:;" data-hash="app">APP设计</a></li>
+					<li><a href="javascript:;" data-hash="ps">图像PS</a></li>
+					<li><a href="javascript:;" data-hash="staff">期望职位</a></li>
+					<li><a href="javascript:;" data-hash="message">信息资料</a></li>
+				</ul>
+			</nav>
+			<div id="logo"></div>
+			<section id="content">
+				<!--////首页-->
+				<div data-hash="index" id="index" class="range large-header animated fadeIn">
+					<canvas id="demo-canvas"></canvas>
+					<div id="touxiang" class="animated flipInY">
+						<div id="">
+							<div class="photo"></div>
+							<div class="text">感 动 常 在</div>
+						</div>
+					</div>
+					<div id="wrap" class="animated lightSpeedIn">
+						<div id="zhenli"></div>
+						<div id="zoom">
+							<div id="zoom-pic">
+								<div id="zhenli-big"></div>
+								<div id="mask"></div>
+							</div>
+						</div>
+					</div>
+					<div id="jianjie" class="animated fadeInUp">
+						最精髓的意义都是用简单的模式传达的</br>设计也是如此
+					</div>
+				</div>
+
+				<!--////技能展示-->
+				<div data-hash="skill" id="skill" class="range large-header animated fadeIn">
+					<canvas id="demo-canvas1"></canvas>
+					<div class="box7">
+						<div id="box8">
+							<ul id="show-can" class="move animated zoomInLeft">
+								<li id="_bs" class="reset"></li>
+								<li id="_h5" class="reset"></li>
+								<li id="_css3" class="reset"></li>
+								<li id="_jq" class="reset"></li>
+								<li id="_js" class="reset"></li>
+								<li id="_ajax" class="reset"></li>
+								<li id="_ps" class="reset"></li>
+								<li id="_sketch" class="reset"></li>
+								<li id="_rp" class="reset"></li>
+								<li id="_fl" class="reset"></li>
+								<li id="_ai" class="reset"></li>
+								<li id="_cd" class="reset"></li>
+							</ul>
+						</div>
+						<div id="btn-change" class="move animated zoomInRight">
+							<span style="left: 384px;" id="caret"></span>
+							<a class="show1">前端开发技能</a>
+							<a>UI设计技能</a>
+						</div>
+					</div>
+
+				</div>
+
+				<!--/****AWEBS**/-->
+				<div data-hash="web" id="web" class="range large-header animated fadeIn">
+					<div class="wrap">
+						<ul id="list">
+							<li id="li1" class="active"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></li>
+							<li id="li2"><span></span><span></span><span></span><span></span><span></span></li>
+							<li id="li3"><span></span><span></span><span></span><span></span><span></span></li>
+							<li id="li4"><span></span><span></span><span></span><span></span><span></span><span></span><span></span> </li>
+						</ul>
+
+					</div>
+					<ul id="btns">
+						<li id="b-l"></li>
+						<li id="b-r"></li>
+					</ul>
+
+				</div>
+
+				<!--/****APPS**/-->
+				<div data-hash="app" id="app" class="range large-header animated fadeIn">
+					<div class="scrollBar"></div>
+					<div id="apps">
+						<div id="app1">
+							<div id="fitplay" class="reset1 animated slideInDown"></div>
+							<div id="inf1" class="inf">
+								fitPlay是一款能够交友的健身APP，根据您自己所在的健身场馆匹配到同样在此场馆中的人，可以进行互动，还能记录运动数据等
+								<a class="link1">More Pages</a>
+							</div>
+						</div>
+						<div id="app2">
+							<div id="yunbao" class="reset1 animated slideInUp"></div>
+							<div id="inf2" class="inf">
+								孕宝是一款集备孕、怀孕、育儿为一体的APP，为您提供各方面相关资讯等内容，还能设置提醒、在线咨询医生和达人等功能
+								<a class="link2">More Pages</a>
+							</div>
+						</div>
+					</div>
+					<div id="box1" class="box">
+						<div id="play1"></div>
+						<div id="play2"></div>
+					</div>
+					<div id="box2" class="box">
+						<div id="show">
+							<div id="play11">
+								<section class="sections">
+									<div id="pic1" class="pic"></div>
+									<div id="pic2" class="pic"></div>
+									<div id="pic3" class="pic"></div>
+								</section>
+								<section class="sections">
+									<div id="pic4" class="pic"></div>
+									<div id="pic5" class="pic"></div>
+									<div id="pic6" class="pic"></div>
+								</section>
+								<section class="sections">
+									<div id="pic7" class="pic"></div>
+									<div id="pic8" class="pic"></div>
+									<div id="pic9" class="pic"></div>
+								</section>
+							</div>
+							<div id="play22">
+								<section class="sections">
+									<div id="pic01" class="pic"></div>
+									<div id="pic02" class="pic"></div>
+									<div id="pic03" class="pic"></div>
+								</section>
+								<section class="sections">
+									<div id="pic04" class="pic"></div>
+									<div id="pic05" class="pic"></div>
+									<div id="pic06" class="pic"></div>
+								</section>
+								<section class="sections">
+									<div id="pic07" class="pic"></div>
+									<div id="pic08" class="pic"></div>
+									<div id="pic09" class="pic"></div>
+								</section>
+							</div>
+						</div>
+
+					</div>
+					<div id="close1" class="close"></div>
+					<div id="close2" class="close"></div>
+					<div id="btn-l" class="btns"></div>
+					<div id="btn-r" class="btns"></div>
+					<div id="pots-bar">
+						<div class="pots-box">
+							<div class="pots cur">
+
+							</div>
+						</div>
+						<div class="pots-box">
+							<div class="pots">
+
+							</div>
+						</div>
+						<div class="pots-box">
+							<div class="pots">
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--图像PS的内容-->
+				<div data-hash="ps" id="ps" class="range large-header animated fadeIn">
+					<div class="box3">
+						图像设计(临摹/原创)
+					</div>
+					<div id="box5">
+						<span id="box4">
+							
+						</span>
+					</div>
+					<div id="box0">
+						<div id="imgList">
+							<span title="玄幻(临摹)"></span>
+							<span title="水人(临摹)"></span>
+							<span title="小提琴风行者(原创)"></span>
+							<span title="小黄人(原创)"></span>
+							<span title="招牌名字(原创)"></span>
+							<span title="幻彩三角(临摹)"></span>
+							<span title="曲奇名字(原创)"></span>
+							<span title="远古树屋(临摹)"></span>
+							<span title="人皮面具男(临摹)"></span>
+							<span title="宁静之海(临摹)"></span>
+							<span title="彩色时钟(临摹)"></span>
+							<span title="美国队长盾牌(原创)"></span>
+							<span title="2.5D按钮(临摹)"></span>
+							<span title="泡泡(原创)"></span>
+							<span title="MacBook(原创)"></span>
+							<span title="法老墓(临摹)"></span>
+							<span title="DS-Banner(原创)"></span>
+							<span title="复古风名字(原创)"></span>
+							<span title="一起哈啤(原创)"></span>
+						</div>
+					</div>
+				</div>
+
+				<!--期望职位的内容-->
+				<div data-hash="staff" id="staff" class="range large-header animated fadeIn">
+					<div id="box9">
+						<div id="zhiwei">
+							<span id="up"></span>
+							<span id="down"></span>
+							<span id="left"></span>
+							<span id="right"></span>
+						</div>
+						<div id="penceil"></div>
+						<div id="macbook"></div>
+						<div id="camera"></div>
+					</div>
+				</div>
+
+				<!--信息资料的内容-->
+				<div data-hash="message" id="message" class="range large-header animated fadeIn">
+					<div class="wrap_1" id="list_1">
+						<h2 id="tag">
+							<b id="LbTn">展开</b>
+							Information
+							<b id="RbTn">收拢</b>
+						</h2>
+						<div>
+							<span>我是 吴佳能</span>
+							<div>
+								<span>QQ453513743</span>
+								<div>
+									<span>Tel-18608073793</span>
+									<div>
+										<span>地址：高新区南城都汇</span>
+										<div>
+											<span>更多作品</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="box6">
+						<div id="QQ" class="animated rubberBand">
+							<div id="ma1">
+
+							</div>
+						</div>
+						<div id="WEIBO" class="animated rubberBand">
+							<div id="ma2">
+
+							</div>
+						</div>
+						<div id="WEIXIN" class="animated rubberBand">
+							<div id="ma3">
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<div id="me"></div>
+		</section>
+
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sea.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/animateMove.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/loading.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/desktop/TweenLite.min.js"></script>
+		<script src="js/desktop/EasePack.min.js"></script>
+		<script src="js/desktop/demo-1.js"></script>
+		<script src="js/desktop/demo-2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zoom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/skill.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lunbotu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/web.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ps.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/staff.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/message.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/superMove.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			seajs.use('main.js');
+			lunbo(3000);
+			window.onload = function() {
+				var i = 0;
+				clearInterval(oTimer);
+				oTimer = setInterval(function() {
+					xDiv[i].className = "open";
+					i++;
+					if (i == xDiv.length) {
+						clearInterval(oTimer);
+					}
+				}, 100);
+			}
+		</script>
+	</body>
+
+</html>
